@@ -1,0 +1,147 @@
+<html>
+<head>
+  <!-- These lines can be ignored ...-->
+
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css" rel="stylesheet" />
+
+  <!-- These lines can be ignored ...-->
+</head>
+<body>
+
+  <div>
+    <input id="one" /> +
+    <input id="two" /> =
+    <span id="equals"></span>
+  </div>
+
+  <!-- These lines can be ignored ...-->
+
+  <div id="mocha"></div>
+
+  <script src="https://cdn.rawgit.com/Automattic/expect.js/0.3.1/index.js"></script>
+  <script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js"></script>
+
+  <script>mocha.setup('bdd')</script>
+
+  <script>
+    try {
+
+    var sumToSpan = function() {
+      var elem = document.getElementById("equals");
+      if (firstValue && secondValue) {
+        var newSum = Number(firstValue) + Number(secondValue);
+        if (!isNaN(newSum)) { elem.innerText = newSum }
+      } else {
+        elem.innerText = ""
+      }
+    }
+
+  <!-- These lines can be ignored ...-->
+
+  // These values do _not_ need to be set: they'll be
+  // used later in event handlers.
+  var firstValue;
+  var secondValue;
+
+  /*
+   * Use document.getElementById to assign firstInput
+   * to the input with id "one".
+   */
+    var firstInput;
+
+    firstInput.addEventListener('input', function() {
+      firstValue = firstInput.value;
+      sumToSpan();
+    })
+
+  /*
+   * Use document.getElementById to assign secondInput
+   * to the input with id "two".
+   */
+    var secondInput;
+
+  /*
+   * Use secondInput.addEventListener with the "input" event to
+   * to set the _value_ of secondInput to secondValue.
+   */
+
+  /*
+   * Use document.getElementById to assign equalsField
+   * to the span with id "equals".
+   */
+    var equalsField;
+
+  /*
+   * You might expect a third event handler here, considering
+   * we're working with three elements.
+   *
+   * Surprise! Instead of defining a third event handler,
+   * we're going to simply call a pre-defined function on the
+   * previous event handler.
+
+   * Adding `sumToSpan()` to each of the two input handlers
+   * will call sumToSpan, which takes the numeric values of
+   * both inputs and sets the span "#equals" to that value.
+   */
+
+
+
+    <!-- no changes are needed below this line -->
+    } catch (e) {
+      // Your code might not be ready yet - we do try/catch here so that the tests can still run.
+    }
+
+    describe("DOM element tests", function() {
+      it("updates the value of the first input", function() {
+        var _one = document.getElementById('one');
+        _one.value = 1;
+
+        expect(firstInput.value).to.be(_one.value);
+
+        _one.value = null;
+		  })
+
+      it("updates the value of the second input", function() {
+        var _two = document.getElementById('two');
+        _two.value = 2;
+
+        expect(secondInput.value).to.be(_two.value);
+
+        _two.value = null;
+		  })
+
+      it("correctly updates the third input", function() {
+        var _one = document.getElementById('one');
+        _one.value = 3;
+
+        var _two = document.getElementById('two');
+        _two.value = 4;
+
+        var inputEvt = new Event('input');
+        _one.dispatchEvent(inputEvt);
+        _two.dispatchEvent(inputEvt);
+
+        var _three = document.getElementById('equals');
+        expect(_three.innerText).to.be("7");
+
+        _one.value = null;
+        _two.value = null;
+        _one.dispatchEvent(inputEvt);
+        _two.dispatchEvent(inputEvt);
+		  })
+    })
+  </script>
+
+  <!-- These lines can be ignored ...-->
+
+  <script>
+    mocha.checkLeaks();
+    mocha.run();
+  </script>
+
+  <!-- These lines can be ignored ...-->
+
+</body>
+</html>

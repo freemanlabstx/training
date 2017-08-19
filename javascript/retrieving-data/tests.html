@@ -1,0 +1,100 @@
+<html>
+<head>
+  <!-- These lines can be ignored... -->
+
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css" rel="stylesheet" />
+
+  <!-- These lines can be ignored... -->
+</head>
+<body>
+  <div class="header">
+    <h1 id="title">My title</h1>
+
+    <ul>
+      <li class="item">One</li>
+      <li class="item">Two</li>
+      <li class="item">Three</li>
+      <li class="item">Four</li>
+      <li class="item">Five</li>
+    </ul>
+
+    <h3 id="anotherTitle">Title Two</h3>
+
+    <!--
+      Define a text element (span, p, or h1-h6) with
+      the text "Hello, world!" Give the element an id
+      of your choosing.
+    -->
+  </div>
+
+  <!-- These lines can be ignored... -->
+
+  <div id="mocha"></div>
+
+  <script src="https://cdn.rawgit.com/Automattic/expect.js/0.3.1/index.js"></script>
+  <script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js"></script>
+
+  <script>mocha.setup('bdd')</script>
+
+  <!-- These lines can be ignored... -->
+
+  <script>
+
+  /*
+   * Use document.getElementById to assign title
+   * to the h1 with id "title".
+   */
+    var title;
+
+  /*
+   * Target the .item class, either with
+   * document.getElementsByClassName or
+   * document.querySelectorAll
+   */
+    var items;
+
+  /*
+   * Use document.getElementById to assign titleTwo
+   * to the h3 with id "anotherTitle".
+   */
+    var titleTwo;
+
+  /*
+   * Target your custom element above using
+   * document.getElementById.
+   */
+    var customElement;
+
+    <!-- no changes are needed below this line -->
+
+    describe("DOM element tests", function() {
+      it("found the header", function() {
+        expect(title.id).to.be('title');
+		  })
+
+      it("found the list", function() {
+        expect(items.length).to.be(5);
+		  })
+
+      it("found the second title", function() {
+        expect(titleTwo.innerText).to.be("Title Two");
+		  })
+
+      it("found the custom HTML element", function() {
+        expect(customElement.innerText).to.be("Hello, world!");
+      });
+    })
+  </script>
+
+  <!-- These lines can be ignored... -->
+
+  <script>
+    mocha.checkLeaks();
+    mocha.run();
+  </script>
+
+  <!-- These lines can be ignored... -->
+</body>
+</html>
