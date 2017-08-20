@@ -56,12 +56,19 @@ var me;
 /*
  * Goal #2:
  *
- * This variable should be updated either:
+ * Update correctlyBound to the *value* of the function printNameAndAge.
+ * The result should be the result of the function _after_ it is bound
+ * to the context me. There are two ways to do this:
+ *
  *   1. Calling `printNameAndAge` with the context `me`
  *   2. Binding `printNameAndAge` to the context `me`.
  *      Note that if you bind the function, you'll need to also call it _after_
  *      binding it, by adding an additional set of parentheses `()` at the end.
- *   3. (bonus: get the tests to pass with both!)
+ *      For instance:
+ *        myFunc = myFunc.bind(this);
+ *        var newValue = myFunc();
+ *
+ *   (bonus: get the tests to pass with both!)
  */
 var correctlyBound = printNameAndAge();
 
