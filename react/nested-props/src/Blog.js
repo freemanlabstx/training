@@ -61,7 +61,7 @@ export default class Blog extends React.Component {
         />
         <div style={{display: "flex"}}>
           <div style={{width: "75%"}}>
-            {posts.map((post, index) =>
+            {CHANGE_ME.map((post, index) =>
               <Post
                 key={index}
               />

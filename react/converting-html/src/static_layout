@@ -1,0 +1,18 @@
+div
+  nav.navbar navbar-expand-lg navbar-light bg-light
+    a.navbar-brand
+      "Navbar"
+    div.navbar-nav
+      li.nav-item active
+        a.nav-link
+          "Home"
+      li.nav-item
+        a.nav-link
+          "About"
+  div.container
+    h1
+      "My simple React component"
+    p.lead
+      "This is my simple React component! It has a navbar and a couple other things."
+    p
+      "How neat!"

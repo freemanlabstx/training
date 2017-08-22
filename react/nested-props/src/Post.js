@@ -21,9 +21,9 @@ export default class Post extends React.Component {
     // postContent variable.
     //
     // Replace the static "Body" with an <p> tag containing
-    // the value of your postContent variable.
+    // the value of your postTitle variable.
     //
-    // Replace the static "Comments" by mapping through your
+    // Replace the static CHANGE_ME in line 38 by mapping through your
     // comments variable, rendering a <Comment> component
     // with the prop comment. This will look somewhat like
     // the following:

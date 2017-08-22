@@ -5,7 +5,7 @@ export default class Header extends React.Component {
     // The Header component receives two props that
     // you should have defined previously, in the Blog
     // component. Set these props to variables, and replace
-    // "A Title" and "An Author" with those values in the
+    // "Title" and "Author" with those values in the
     // return portion of this function.
 
     return (
