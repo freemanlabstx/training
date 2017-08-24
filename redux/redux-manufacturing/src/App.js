@@ -40,8 +40,7 @@ class App extends Component {
     newMaterials.screw.count -= 2
     newMaterials.wheel.count -= 2
 
-    // Write an if/else with this.qaCheck() as the condition: we're saying
-    // Create a newWidget object, with the key created set to Date.now()
+    // create a newWidget object, with the key created set to Date.now()
     //
     // Create a newWidgetsInventory array, which is an empty array
     // with this.state.widgets and newWidget concatted onto it.
@@ -50,6 +49,8 @@ class App extends Component {
     // and widgets set to newWidgets.
   }
 
+  // generateOrder creates a new order with a random
+  // number of widgets needed to fulfill that order
   generateOrder() {
     const newOrder = {
       created: Date.now(),
@@ -60,10 +61,9 @@ class App extends Component {
     // with this.state.orders and newOrder concatted onto it.
 
     // Update the orders array in state to newOrders.
-    this.setState({
-    })
   }
 
+  // orderMaterials adds 10 of each material to state
   orderMaterials() {
     const { materials } = this.state
     const { dowel, screw, wheel } = materials
@@ -77,22 +77,25 @@ class App extends Component {
     }))
   }
 
+  // packageOrder removes the top order from state and,
+  // given that we have enough widgets to satisfy
+  // the amount requested in the order, adds 1 to "packaged"
+  // (as well as removes the top order from state, and
+  // subtracting the used widgets).
   packageOrder() {
     const { orders, packaged, widgets } = this.state
     const newOrders = [].concat(orders)
 
     // Get the top order from the array newOrders by
-    // calling .pop(). Assign it to the variable order.
-    const order = newOrders.pop()
+    // calling .shift(). Assign it to the variable order.
 
     // We should ensure that we have enough widgets to package
     // this order. Check `if (order.widgets <= widgets.length)`...
-    if (order.widgets <= widgets.length) {
+      // If it's true...
       // Set state:
       //   - orders should be newOrders
       //   - packaged should be incremented
       //   - widgets should be (widgets - order.widgets)
-    }
   }
 
   render() {
