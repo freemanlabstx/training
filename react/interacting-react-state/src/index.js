@@ -6,6 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 export default class MyEnhancedButton extends React.Component {
   constructor() {
     super()
+
     // Initialize the state of this component:
     //   - count should be set to 0
     //   - oddNumber should be set to false
@@ -28,12 +29,12 @@ export default class MyEnhancedButton extends React.Component {
   // <myCurrentCountVariable> + 1.
 
   render() {
-    const { oddNumber } = this.state;
     // Assign the value of count in state to the variable
     // count.
+    const { oddNumber } = this.state;
 
-    // Set onClick on the button tag to `this.onClick`.
-    const onClick = null;
+    // Set clickFunc to the onClick function for this component
+    const clickFunc = null;
 
     // Set oddNumberString to "True" if oddNumber is true,
     // or "False" if oddNumber is false.
@@ -42,7 +43,7 @@ export default class MyEnhancedButton extends React.Component {
       <div>
         <p>The button has been clicked {count} times</p>
         <p>Odd number? {oddNumberString}</p>
-        <button>
+        <button onClick={clickFunc}>
           Click me
         </button>
       </div>
