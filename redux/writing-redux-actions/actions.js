@@ -1,4 +1,4 @@
-const assert = require("assert");
+const assert = require('assert');
 
 import {
   appReducer,
@@ -16,7 +16,6 @@ import {
 //   - returns an object with type ADD_ITEM
 //     and item, set to item
 
-
 // Define the updateItem function:
 //   - takes item and index as the function
 //     arguments
@@ -27,38 +26,67 @@ import {
 // make sure that UPDATE_ITEM is being correctly
 // exported.
 
-
 // Define the removeItem function:
 //   - takes index as the function argument
 //   - returns an object with type REMOVE_ITEM
 //     and index, set to index
 
-
-
 // No changes are needed below this line.
 
 let itemsState = itemsReducer([], {});
-let newItemState = itemsReducer(itemsState, { action: 'UNKNOWN' });
-assert.notEqual(itemsState, undefined, "The itemsReducer isn't properly returning state - the new state is undefined");
+let newItemState = itemsReducer(itemsState, {action: 'UNKNOWN'});
+assert.notEqual(
+  itemsState,
+  undefined,
+  "The itemsReducer isn't properly returning state - the new state is undefined",
+);
 
 itemsState = itemsReducer([], {});
 itemsState = itemsReducer(itemsState, addItem('New item'));
-assert.deepEqual(itemsState, ['New item'], "The itemsReducer didn't create a new item, given the ADD_ITEM action");
+assert.deepEqual(
+  itemsState,
+  ['New item'],
+  "The itemsReducer didn't create a new item, given the ADD_ITEM action",
+);
 
 itemsState = itemsReducer(itemsState, updateItem('Newer item', 0));
-assert.deepEqual(itemsState, ['Newer item'], "The itemsReducer didn't update an item, given the UPDATE_ITEM action");
+assert.deepEqual(
+  itemsState,
+  ['Newer item'],
+  "The itemsReducer didn't update an item, given the UPDATE_ITEM action",
+);
 
 itemsState = itemsReducer(itemsState, removeItem(0));
-assert.deepEqual(itemsState, [], "The itemsReducer didn't remove an item, given the REMOVE_ITEM action");
+assert.deepEqual(
+  itemsState,
+  [],
+  "The itemsReducer didn't remove an item, given the REMOVE_ITEM action",
+);
 
 let state = appReducer();
 state = appReducer(state, addItem('New item'));
-assert.deepEqual(state.items, ['New item'], "The appReducer didn't create a new item, given the ADD_ITEM action");
+assert.deepEqual(
+  state.items,
+  ['New item'],
+  "The appReducer didn't create a new item, given the ADD_ITEM action",
+);
 state = appReducer(state, updateItem('Newer item', 0));
-assert.deepEqual(state.items, ['Newer item'], "The appReducer didn't update an item, given the UPDATE_ITEM action");
+assert.deepEqual(
+  state.items,
+  ['Newer item'],
+  "The appReducer didn't update an item, given the UPDATE_ITEM action",
+);
 state = appReducer(state, removeItem(0));
-assert.deepEqual(state.items, [], "The appReducer didn't remove an item, given the REMOVE_ITEM action");
+assert.deepEqual(
+  state.items,
+  [],
+  "The appReducer didn't remove an item, given the REMOVE_ITEM action",
+);
 
-assert.notEqual(state, undefined, "The appReducer isn't properly returning state - the new state is undefined");
+assert.notEqual(
+  state,
+  undefined,
+  "The appReducer isn't properly returning state - the new state is undefined",
+);
 
-console.log("Passed! :)");
+console.log('Passed! :)');

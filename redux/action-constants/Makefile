@@ -1,2 +1,2 @@
 default:
-	node *.js
+	./node_modules/.bin/babel-node *.js

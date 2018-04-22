@@ -2,11 +2,11 @@ import React from 'react';
 
 export default class NewPost extends React.Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      title: "",
-      body: ""
-    }
+      title: '',
+      body: '',
+    };
 
     this.addPost = this.addPost.bind(this);
     this.changeTitle = this.changeTitle.bind(this);
@@ -16,23 +16,23 @@ export default class NewPost extends React.Component {
   addPost(evt) {
     evt.preventDefault();
 
-    const { addPost } = this.props;
+    const {addPost} = this.props;
 
-    const { title, body } = this.state;
+    const {title, body} = this.state;
 
     const newPost = {
       comments: [],
       postDate: new Date().toString(),
       postTitle: title,
-      postContent: body
-    }
+      postContent: body,
+    };
 
-    addPost(newPost)
+    addPost(newPost);
 
     this.setState({
-      title: "",
-      body: ""
-    })
+      title: '',
+      body: '',
+    });
   }
 
   changeTitle(evt) {
@@ -54,39 +54,34 @@ export default class NewPost extends React.Component {
   }
 
   render() {
-    // This component has two state variables:
-    //   - title
-    //   - body
-    // Assign these to variables.
-
+    /* This component has two state variables:
+     *   - title
+     *   - body
+     * Assign these to variables.
+     *
+     * Add the onSubmit prop to form, which should be set
+     * to this.addPost.
+     *
+     * Two additional props should be provided to the
+     * "Post Title" input:
+     *   - value, which is set to the title value from state
+     *   - onChange, which is set to this.changeTitle
+     *
+     * Two additional props should be provided to the
+     * "Post Body" textarea:
+     *   - value, which is set to the body value from state
+     *   - onChange, which is set to this.changeBody
+     */
     return (
-      {/* Add the onSubmit prop to form, which should be set
-        to this.addPost. */}
-      <form style={{padding: "2em"}} onSubmit={this.addPost}>
+      <form style={{padding: '2em'}}>
         <div>
-          <input
-            placeholder="Post Title"
-            {/*
-              Two additional props should be
-              provided here:
-                - value, which is set to the title value from state
-                - onChange, which is set to this.changeTitle
-            */}
-          />
+          <input placeholder="Post Title" />
         </div>
         <div>
-          <textarea
-            placeholder="Post Body"
-            {/*
-              Two additional props should be
-              provided here:
-                - value, which is set to the body value from state
-                - onChange, which is set to this.changeBody
-            */}
-          />
+          <textarea placeholder="Post Body" />
         </div>
         <button type="submit">Add new post</button>
       </form>
-    )
+    );
   }
 }

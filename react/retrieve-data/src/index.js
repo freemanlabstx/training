@@ -7,7 +7,7 @@ import './index.css';
 
 class NetworkedComponent extends React.Component {
   constructor() {
-    super()
+    super();
 
     // Set this component's state:
     //   1. `loading` should be `false`
@@ -23,14 +23,13 @@ class NetworkedComponent extends React.Component {
     //   this.setState({ key: 'value' })
 
     // This does not need to be changed.
-    var url = "https://bytesized-training-assets.herokuapp.com/exercise.json"
+    var url = 'https://bytesized-training-assets.herokuapp.com/exercise.json';
 
     // `fetch` makes a HTTP request to the url, then...
     fetch(url).then(resp => {
       // With the response, we try and turn it into
       // a JavaScript object from JSON, using .json(), then...
       resp.json().then(json => {
-
         // With the variable `json` that is provided as
         // the result of `resp.json()`, update the component state,
         // using this.setState below:
@@ -38,7 +37,6 @@ class NetworkedComponent extends React.Component {
         //   - `string` should be set to the value of `json.string`:
         //     this is the value of the key `string` in the returned
         //     JSON.
-
       });
     });
   }
@@ -53,7 +51,6 @@ class NetworkedComponent extends React.Component {
     // Set these values to a variable name of
     // your choice below.
 
-
     // When you've replaced both instances of UPDATE_ME
     // in this render function, you can delete its
     // definition below.
@@ -65,7 +62,7 @@ class NetworkedComponent extends React.Component {
       // If we're still loading, we use
       // this custom LoadingComponent.
       // This does not need to be changed.
-      loadingOrString = <LoadingComponent />
+      loadingOrString = <LoadingComponent />;
     } else {
       // If we aren't loading, we should display
       // the string value from state instead.
@@ -73,15 +70,11 @@ class NetworkedComponent extends React.Component {
       // from the network. Replace UPDATE_ME
       // with the variable you defined to
       // store this.state.string.
-      loadingOrString = <h3>{UPDATE_ME}</h3>
+      loadingOrString = <h3>{UPDATE_ME}</h3>;
     }
 
     // This does not need to be changed.
-    return (
-      <div>
-        {loadingOrString}
-      </div>
-    );
+    return <div>{loadingOrString}</div>;
   }
 }
 
@@ -91,17 +84,19 @@ class LoadingComponent extends React.Component {
   render() {
     return (
       <div className="spinner">
-        <div className="rect1"></div>
-        <div className="rect2"></div>
-        <div className="rect3"></div>
-        <div className="rect4"></div>
-        <div className="rect5"></div>
+        <div className="rect1" />
+        <div className="rect2" />
+        <div className="rect3" />
+        <div className="rect4" />
+        <div className="rect5" />
       </div>
-    )
+    );
   }
 }
 
-var root = document.getElementById("root");
-if (root) { ReactDOM.render(<NetworkedComponent />, root); }
+var root = document.getElementById('root');
+if (root) {
+  ReactDOM.render(<NetworkedComponent />, root);
+}
 
 export default NetworkedComponent;

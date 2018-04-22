@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
-import { decrement, increment } from './actions';
+import {decrement, increment} from './actions';
 
 class App extends Component {
   render() {
@@ -11,14 +11,10 @@ class App extends Component {
     return (
       <div>
         <p>{this.props.counter}</p>
-        <button onClick={this.props.increment}>
-          Increment
-        </button>
-        <button onClick={this.props.decrement}>
-          Decrement
-        </button>
+        <button onClick={this.props.increment}>Increment</button>
+        <button onClick={this.props.decrement}>Decrement</button>
       </div>
-    )
+    );
   }
 }
 
@@ -29,15 +25,12 @@ const mapStateToProps = state => {
   // component as this.props.error.
   return {
     counter: state.counter,
-  }
-}
+  };
+};
 
 const mapDispatchToProps = {
   decrement,
-  increment
-}
+  increment,
+};
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App);

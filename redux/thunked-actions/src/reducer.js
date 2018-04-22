@@ -1,13 +1,12 @@
 // Import the ERROR action type.
-import { DECREMENT, INCREMENT } from './actions';
+import {DECREMENT, INCREMENT} from './actions';
 
 // Add the empty string "error" to initialState.
 const initialState = {
   counter: 0,
-}
+};
 
 export default function rootReducer(state = initialState, action) {
-  console.log(action)
   switch (action.type) {
     case DECREMENT:
       // We're successfully decrementing.
@@ -28,8 +27,9 @@ export default function rootReducer(state = initialState, action) {
     // Add a case statement to match ERROR in
     // your reducer. It should generate a new
     // version of state, and set error to
-    // true.
+    // the message parameter in the action.
+
     default:
-      return state
+      return state;
   }
 }

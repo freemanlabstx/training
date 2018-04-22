@@ -5,7 +5,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 // Import the named class Provider from 'react-redux'
 
-import { createStore } from 'redux';
+import {createStore} from 'redux';
 import reducer from './reducer';
 
 // Define a store variable that is the result of calling the createStore
@@ -18,9 +18,6 @@ import reducer from './reducer';
 // Instead of directly rendering <App />, make <App /> the child element
 // of a <Provider /> component, and render that using ReactDOM.render.
 
-ReactDOM.render(
-  <App />
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('root'));
 
 registerServiceWorker();
