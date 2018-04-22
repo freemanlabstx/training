@@ -7,30 +7,25 @@ var PROP_TEXT_HERE;
 
 class MyApp extends React.Component {
   render() {
+    // Instead of a span below, try using
+    // MyComponent, as well as passing a name prop.
     return (
       <div>
-        {/*
-          Replace the below span tag with
-          your nested component
-        */}
-        <span></span>
+        <span>Placeholder</span>
       </div>
-    )
+    );
   }
 }
 
 class MyComponent extends React.Component {
   render() {
+    // Replace PROP_TEXT_HERE with the
+    // `name` prop passed in to the component.
+
+    // Remember to define a name variable, using
+    // the value from `this.props`.
     return (
       <div>
-        <h1>Hello!</h1>
-        {/*
-          Replace PROP_TEXT_HERE with the
-          `name` prop passed in to the component.
-
-          Remember to define a name variable, using
-          the value from `this.props`.
-        */}
         <span>{PROP_TEXT_HERE}</span>
       </div>
     );
@@ -39,7 +34,9 @@ class MyComponent extends React.Component {
 
 // No changes are needed below this line.
 
-const root = document.getElementById("root");
-if (root) { ReactDOM.render(<MyApp />, root); }
+const root = document.getElementById('root');
+if (root) {
+  ReactDOM.render(<MyApp />, root);
+}
 
-export { MyApp, MyComponent };
+export {MyApp, MyComponent};

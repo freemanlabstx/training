@@ -27,9 +27,10 @@ export default class Comment extends React.Component {
       <div>
         <h5>Author</h5>
         <p>Body</p>
-        <p><small>Date</small></p>
+        <p>
+          <small>Date</small>
+        </p>
       </div>
-    )
+    );
   }
 }
-

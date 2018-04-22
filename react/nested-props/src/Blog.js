@@ -6,24 +6,26 @@ import Sidebar from './Sidebar';
 
 export default class Blog extends React.Component {
   constructor() {
-    super()
+    super();
 
     // A state object should be initialized with
     // the following:
     //   - blogTitle should be set to null
     //   - blogAuthor should be set to null
     //   - posts should be an empty array `[]`
- }
+  }
 
   componentDidMount() {
-    const url = "https://bytesized-training-assets.herokuapp.com/blog.json"
-    fetch(url).then(resp => resp.json().then(json => {
-      this.setState({
-        blogTitle: json.blogTitle,
-        blogAuthor: json.blogAuthor,
-        posts: json.posts
-      })
-    }));
+    const url = 'https://bytesized-training-assets.herokuapp.com/blog.json';
+    fetch(url).then(resp =>
+      resp.json().then(json => {
+        this.setState({
+          blogTitle: json.blogTitle,
+          blogAuthor: json.blogAuthor,
+          posts: json.posts,
+        });
+      }),
+    );
   }
 
   render() {
@@ -49,31 +51,23 @@ export default class Blog extends React.Component {
     //   - Update the value CHANGE_ME below to your posts
     //     variable. This will "loop" through the posts
     //     array and create a Post component for each post.
-    //     Pass in post (value) _as_ the prop post (name) for each
+    //     Pass in each "item" as the prop post for each
     //     component.
-    //       <Post name={value} />
     // Sidebar:
     //   - Pass the value of your posts variable as a prop `posts`.
 
     return (
       <div>
-        <Header
-        />
-        <div style={{display: "flex"}}>
-          <div style={{width: "75%"}}>
-            {CHANGE_ME.map((post, index) =>
-              <Post
-                key={index}
-              />
-            )}
+        <Header />
+        <div style={{display: 'flex'}}>
+          <div style={{width: '75%'}}>
+            {CHANGE_ME.map((item, index) => <Post key={index} />)}
           </div>
-          <div style={{height: "100%", width: "25%"}}>
-            <Sidebar
-            />
+          <div style={{height: '100%', width: '25%'}}>
+            <Sidebar />
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
-

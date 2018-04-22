@@ -16,13 +16,8 @@ export default class Post extends React.Component {
     //   var myProp = this.props.myProp;
     //   var myField = myProp.myField;
 
-    // In the return portion of render, replace the static
-    // "Title" with an <h1> tag containing the value of your
-    // postContent variable.
-    //
-    // Replace the static "Body" with an <p> tag containing
-    // the value of your postTitle variable.
-    //
+    // Replace the h1 "Title" text with your postTitle.
+    // Replace the p "Content" text with your postContent.
     // Replace the static CHANGE_ME in line 38 by mapping through your
     // comments variable, rendering a <Comment> component
     // with the prop comment. This will look somewhat like
@@ -32,17 +27,11 @@ export default class Post extends React.Component {
     //     <Subcomponent key={index} prop={value} />
     //   )}
     return (
-      <div style={{padding: "2em"}}>
+      <div style={{padding: '2em'}}>
         <h1>Title</h1>
         <p>Content</p>
-        {CHANGE_ME.map((comment, index) =>
-          <Comment
-            key={index}
-            {/* what value are we not passing in yet? */}
-          />
-        )}
+        {CHANGE_ME.map((comment, index) => <Comment key={index} />)}
       </div>
     );
   }
 }
-
