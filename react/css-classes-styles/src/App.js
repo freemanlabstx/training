@@ -30,9 +30,13 @@ class App extends Component {
       *   - bg-red is true
       *   - largePadding is true _if_ style.lineHeight is greater than 1
       */
+    const divClasses = classnames({
+      'bg-red': false,
+      largePadding: style.linHeight > 1
+    })
 
     return (
-      <div>
+      <div className={divClasses}>
         <h1>Welcome to React</h1>
         <p>
           To get started, edit <code>src/App.js</code> and save to reload.
