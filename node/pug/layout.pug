@@ -1,0 +1,53 @@
+html
+  link(
+    rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous"
+  )
+
+  //- First, let's create the "body" for our page.
+  
+  //- At the same level of indentation as this comment,
+  //- add the tag "body". Remember, in Pug, there's no
+  //- <body> or anything like that: just "body" on its own.
+  //- Indentation is important, too! Add the tag right
+  //- below this comment.
+
+    //- Next, add a "div" element underneath this comment
+    //- (keeping the same level of indentation). You can
+    //- pass classes to the element by adding .yourClass
+    //- after the tag, like div.myClass. You can even append
+    //- multiple, by doing div.myClass.myClassTwo. 
+    //- Try adding the classes "container" and "mt-5".
+
+      //- At this indentation level, add an h1 tag with the
+      //- text "My cool blog" (or whatever you prefer). To do this,
+      //- write "h1" and then your text, like this:
+      //- h1 Testing one two
+  
+      //- Underneath this comment, add a div element with class
+      //- "py-4".
+      
+        //- Now we should actually pass some data in here. Go to `index.js`
+        //- and make sure that you're passing "posts" into the res.render
+        //- call. 
+        //-
+        //- To loop through an array, like posts, we'll use the "each" syntax.
+        //-   each x in y
+        //-     h2= x.name
+        //-     h2= x.date
+        //-
+        //- Do something similar to the above example, but render out the following
+        //- (assuming the variable "post"):
+        //- 
+        //- 1. An h2 with value post.postTitle
+        //- 2. A p with post.postContent
+        //- 3. A p with the text "Posted on <postDate>". Try using interpolation
+        //-    for postDate - if I had a name variable, I'd do something like: 
+        //-    
+        //-    p My name is #{myVar}
+        //-
+        //- Fill in all three of these fields, at this indentation level.
+        //- You may need to restart your server for the changes to appear!
+  
