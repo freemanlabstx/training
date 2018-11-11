@@ -2,8 +2,7 @@ const MongoClient = require("mongodb").MongoClient;
 const assert = require("assert");
 
 const port = process.env.PORT || 27017;
-const url = `mongodb://localhost:${port}`;
-const dbName = "myproject";
+const url = `mongodb://localhost:${port}/trainingproject`;
 
 MongoClient.connect(
   url,
