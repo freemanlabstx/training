@@ -29,7 +29,7 @@ class Packaging extends Component {
 //   2) an object with:
 //     key checkOrderForPackaging set to checkOrderForPackaging
 //
-// This response should itself be called as a function, with the argument Orders
+// This response should itself be called as a function, with the argument Packaging
 //   e.g. connect(1, 2)(3)
 const component = null;
 export default component;
