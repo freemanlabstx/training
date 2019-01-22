@@ -15,7 +15,7 @@ const items = 'abcdefghijklmnopqrstuvwxyz01234567890'.split('')
 //       Inside of the tbody, map through the this.state.items,
 //       using the function arguments 'item' and 'index', and return:
 //         A 'tr' element
-//           With a child component 'Column', passing the props
+//           With a child component 'Columns', passing the props
 //             'item' and 'index' from the map function
 class BasicComponent extends React.Component {
   state = { items }
