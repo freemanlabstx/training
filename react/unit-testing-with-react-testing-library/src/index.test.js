@@ -107,7 +107,7 @@ test("can find the num", () => {
 test("can find the list", () => {
   // Let's replace this test with another usage of
   // getByTestId. We want to find the ul element,
-  // which has a data-test-id attribute of "test".
+  // which has a data-test-id attribute of "list".
   //
   // Using the previous test as a reference, set
   // listNode to the value of calling getByTestId
