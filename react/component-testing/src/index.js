@@ -1,20 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
 var TEXT_HERE, FUNCTION_HERE;
 
 class MyFirstComponent extends React.Component {
   constructor() {
-    super()
+    super();
     this.state = {
       ping: null,
-      hello: 'world'
+      hello: "world"
     };
     this.clickedButton = this.clickedButton.bind(this);
   }
 
   clickedButton() {
-    this.setState({ ping: 'pong' })
+    this.setState({ ping: "pong" });
   }
 
   render() {
@@ -22,7 +22,7 @@ class MyFirstComponent extends React.Component {
 
     return (
       <div>
-        <h1>Hello!</h1>
+        <h1>{spanText}</h1>
         <button onClick={this.clickedButton}>Click me</button>
       </div>
     );
@@ -30,6 +30,8 @@ class MyFirstComponent extends React.Component {
 }
 
 const root = document.getElementById("root");
-if (root) { ReactDOM.render(<MyFirstComponent />, root); }
+if (root) {
+  ReactDOM.render(<MyFirstComponent />, root);
+}
 
 export default MyFirstComponent;
