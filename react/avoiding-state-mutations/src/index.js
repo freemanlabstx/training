@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import registerServiceWorker from "./registerServiceWorker";
 
 export default class MyComponent extends React.Component {
   constructor() {
@@ -24,8 +24,7 @@ export default class MyComponent extends React.Component {
 
   // Increment the count value from state,
   // and set it as the new value of count.
-  increment() {
-  }
+  increment() {}
 
   // Update the implementation of updateObj
   // to ensure that the reference of obj in state
@@ -34,7 +33,7 @@ export default class MyComponent extends React.Component {
     const { obj } = this.state;
 
     obj.age += 1;
-    obj.favoriteNumbers.push(69);
+    obj.favoriteNumbers.push(42);
     obj.updated = true;
 
     this.setState({ obj: obj });
@@ -75,25 +74,12 @@ export default class MyComponent extends React.Component {
     //   Give it the className "addToSet". You can choose the text,
     //   but you might prefer something like "Add to set".
 
-    return (
-      <div>
-        <h2>{id}</h2>
-        <h3>My favorite numbers: {favoriteNumbers.join(', ')}</h3>
-        <h4>Set: {set.join(', ')}</h4>
-        <button onClick={this.increment} className="increment">
-          Add 1 to {count}
-        </button>
-        <button onClick={this.updateObj} className="updateObj">
-          Update object
-        </button>
-        <button onClick={this.addToSet} className="addToSet">
-          Add to set
-        </button>
-      </div>
-    )
+    return <div />;
   }
 }
 
-const root = document.getElementById('root');
-if ( root ) { ReactDOM.render(<MyComponent />, root); }
+const root = document.getElementById("root");
+if (root) {
+  ReactDOM.render(<MyComponent />, root);
+}
 registerServiceWorker();
