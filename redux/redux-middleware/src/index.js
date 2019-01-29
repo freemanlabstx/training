@@ -1,15 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import registerServiceWorker from "./registerServiceWorker";
 
-import { Provider } from 'react-redux';
+import { Provider } from "react-redux";
 
 // Import the applyMiddleware function
 // from 'redux', along with createStore.
-import { createStore, applyMiddleware } from 'redux';
 
-import reducer from './reducer';
+import reducer from "./reducer";
 
 // Define a function called logger, which will log a dispatched
 // action as it moves through the system.
@@ -38,7 +37,7 @@ import reducer from './reducer';
 // Use the applyMiddleware function, with the argument
 // logger, as the second argument in the createStore function.
 // This will add our custom logger as middleware to the Redux store.
-const store = createStore(reducer)
+const store = createStore(reducer);
 
 // Once you've successfully used your logger as middleware,
 // try importing redux-logger (`yarn add redux-logger`) and
@@ -50,7 +49,7 @@ ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 registerServiceWorker();
