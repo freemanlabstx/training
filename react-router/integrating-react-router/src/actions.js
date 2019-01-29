@@ -53,7 +53,7 @@ export function checkOrderForPackaging() {
 //   - the key "type" should be the constant PACKAGE_ORDER
 //   - the key "order" should be set to the argument order
 
-// Define the function shipOrder, which and returns an object:
+// Define the function shipOrder, which returns an object:
 //   - the key "type" should be the constant SHIP_ORDER
 
 export function presentError(message) {
@@ -63,7 +63,7 @@ export function presentError(message) {
   };
 }
 
-export default {
+export {
   attemptWidgetCreation,
   generateOrder,
   orderMaterials,
