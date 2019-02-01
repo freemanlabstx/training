@@ -71,7 +71,7 @@ const requestLibrary = syncrequest;
 
 console.log("Beginning request...");
 
-async function work() {}
+function work() {}
 
 work();
 
