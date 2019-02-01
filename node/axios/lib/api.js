@@ -1,4 +1,4 @@
-const url = "https://byteconf-training-chirp.herokuapp.com";
+const url = "https://bytesized-training-chirp.herokuapp.com";
 
 /* 
  * This is the base API layer for interfacing with
