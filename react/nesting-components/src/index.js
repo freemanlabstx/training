@@ -7,8 +7,11 @@ var PROP_TEXT_HERE;
 
 class MyApp extends React.Component {
   render() {
-    // Instead of a span below, try using
-    // MyComponent, as well as passing a name prop.
+    // Instead of a span below, replace it with
+    // MyComponent, and pass a `name` prop into it.
+    //
+    // Props can be passed in like HTML attributes:
+    // <Pizza flavor="pepperoni" />
     return (
       <div>
         <span>Placeholder</span>

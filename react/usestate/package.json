@@ -1,22 +1,22 @@
 {
-  "name": "first",
+  "name": "hooks",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "enzyme": "^2.9.1",
-    "react": "^17",
-    "react-dom": "^17",
-    "react-test-renderer": "^17"
-  },
-  "devDependencies": {
-    "react-scripts": "^2",
-    "sinon": "^3.2.1"
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^12.1.2",
+    "react": "^16.7.0-alpha",
+    "react-dom": "^16.7.0-alpha",
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "browserslist": [
     ">0.2%",

@@ -1,32 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import ReactDOM from "react-dom";
 
-var TEXT_HERE, FUNCTION_HERE;
+const MyFirstComponent = () => {
+  const [pingPong, setPingPong] = useState(null)
+  const [text, _setText] = useState("Hello, world")
 
-class MyFirstComponent extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      ping: null,
-      hello: "world"
-    };
-    this.clickedButton = this.clickedButton.bind(this);
+  function clickedButton() {
+    setPingPong("pong");
   }
 
-  clickedButton() {
-    this.setState({ ping: "pong" });
-  }
-
-  render() {
-    var spanText = "Hello!";
-
-    return (
-      <div>
-        <h1>{spanText}</h1>
-        <button onClick={this.clickedButton}>Click me</button>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h1 role="text">{text}</h1>
+      <h2 role="pingpong">{pingPong}</h2>
+      <button role="button" onClick={clickedButton}>Click me</button>
+    </div>
+  );
 }
 
 const root = document.getElementById("root");
